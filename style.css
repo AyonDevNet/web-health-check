@@ -1,0 +1,107 @@
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    .main-contianer {
+      display: flex;
+      height: 100vh;
+    }
+
+    .left-section {
+      flex: 1;
+      background-color: #53b0f3bf	; /* blue section */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    
+
+    .logo img  {
+      height: 180px;
+      width: auto;
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+
+    }
+
+
+  .logo {
+   
+   position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 10;
+
+  }
+
+
+  .cover-image {
+
+       height: 300px;
+       width: 300px;
+         border-radius: 8px;
+
+
+
+  }
+
+
+  .input-heading {
+
+  padding-bottom: 25px;  
+  padding-right: 180px;
+
+  }
+    
+
+    .right-section {
+      flex: 1;
+      background-color: #f9f9f9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .input-box {
+      width: 100%;
+      max-width: 350px;
+      margin-bottom: 1rem;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    .btn {
+      width: 100%;
+      max-width: 350px;
+      padding: 0.8rem;
+      background-color: #0056ff;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #0041c4;
+    }
+
+    .github {
+      margin-top: 2rem;
+      font-size: 28px;
+      color: #333;
+      cursor: pointer;
+    }
+
+    .github:hover {
+      color: #0056ff;
+    }
