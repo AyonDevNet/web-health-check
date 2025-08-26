@@ -95,13 +95,22 @@
       background-color: #0041c4;
     }
 
-    .github {
+    .font-icon {
       margin-top: 2rem;
       font-size: 28px;
       color: #333;
       cursor: pointer;
     }
 
-    .github:hover {
+    .font-icon:hover {
       color: #0056ff;
+    }
+
+
+    .main-icon-contianer {
+        
+      display: flex;
+      padding: 10px;
+
+
     }
