@@ -1,38 +1,43 @@
-
-document.getElementById('btn').addEventListener('click' , function(){
-
-//    const inputArea = document.getElementById('input-box').ariaValueMax.trim()
-
+document.getElementById('btn').addEventListener('click', function(){
+    
+    // Fix 1: Use .value instead of .ariaValueMax
+    const inputArea = document.getElementById('input-box').value.trim();
+    
     const PORTS = [22, 80, 443, 21, 25, 3306, 8080];
-
-function port_health() {
-  PORTS.forEach(port => {
-    if (port === 22) {
-      console.log("Port 22: SSH is working ✅");
-    } else if (port === 80) {
-      console.log("Port 80: HTTP is working ✅");
-    } else if (port === 443) {
-      console.log("Port 443: HTTPS is working ✅");
-    } else if (port === 21) {
-      console.log("Port 21: FTP is working ✅");
-    } else if (port === 25) {
-      console.log("Port 25: SMTP is working ✅");
-    } else if (port === 3306) {
-      console.log("Port 3306: MySQL is working ✅");
-    } else if (port === 8080) {
-      console.log("Port 8080: HTTP-Alt (proxy/dev server) is working ✅");
-    } else {
-      console.log(`Port ${port}: Unknown service ❌`);
+    
+    // Fix 2: Create a variable to store all results
+    let allResults = "";
+    
+    function port_health() {
+        PORTS.forEach(port => {
+            if (port === 22) {
+                allResults += "Port 22: SSH is working<br>";
+            } else if (port === 80) {
+                allResults += "Port 80: HTTP is working<br>";
+            } else if (port === 443) {
+                allResults += "Port 443: HTTPS is working<br>";
+            } else if (port === 21) {
+                allResults += "Port 21: FTP is working<br>";
+            } else if (port === 25) {
+                allResults += "Port 25: SMTP is working<br>";
+            } else if (port === 3306) {
+                allResults += "Port 3306: MySQL is working<br>";
+            } else if (port === 8080) {
+                allResults += "Port 8080: HTTP-Alt (proxy/dev server) is working<br>";
+            } else {
+                allResults += `Port ${port}: Unknown service<br>`;
+            }
+        });
     }
-  });
-}
-
-port_health();
-
-
-})
-
-
-
-
-
+    
+    // Call the function to generate results
+    port_health();
+    
+    // Fix 3: Show the div and display the if/else results
+    let result = document.getElementById('resultShow');
+    result.style.display = "block";
+    
+    // Fix 4: Show the actual if/else results, not the PORTS array
+    result.innerHTML = allResults;
+    
+});
