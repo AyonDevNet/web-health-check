@@ -94,7 +94,13 @@ pipeline {
     
     post {
         always {
-            sh 'docker logout'
+            script {
+                try {
+                    sh 'docker logout'
+                } catch (Exception e) {
+                    echo "Docker logout failed or not logged in"
+                }
+            }
         }
         success {
             echo "=========================================="
@@ -105,7 +111,10 @@ pipeline {
             echo "=========================================="
         }
         failure {
+            echo "=========================================="
             echo "Pipeline failed!"
+            echo "Please check the logs above for details"
+            echo "=========================================="
         }
     }
 }
