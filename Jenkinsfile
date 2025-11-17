@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment {
-        DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials')
+        DOCKERHUB_CREDENTIALS = credentials('demo-project-docker')
         DOCKERHUB_USERNAME = 'ayon077' 
         IMAGE_NAME = 'web-health'
         VERSION_FILE = 'version.txt'
